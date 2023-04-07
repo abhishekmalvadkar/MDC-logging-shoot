@@ -23,7 +23,7 @@ public class MDCFilter implements Filter {
 			throws IOException, ServletException {
 		try {
 			// at request time
-			String requestIdToken = UUID.randomUUID().toString().replaceAll("-", ""); // b7338229f2f04db8b9aea25b341f50d7
+			String requestIdToken = UUID.randomUUID().toString().replace("-", ""); // 342400770e58450ca56880cb9ef060e3
 			MDC.put(X_REQUEST_ID, requestIdToken);
 			chain.doFilter(request, response);
 			// at response time
